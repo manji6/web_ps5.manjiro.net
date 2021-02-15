@@ -8,11 +8,9 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <GatsbySeo
-        title={props.data.site.siteMetadata.title}
         openGraph={{
+          title: props.data.site.siteMetadata.title,
           url: props.data.site.siteMetadata.siteUrl,
-          title: "PlayStation 5 の発売日を思い出す為のサイト",
-          description: "PlayStation 5 は一体いつになったら買えるのか、買えた時の喜びと何日苦悩したのかを調べるサイトです。",
           images: [{
             url: props.location.host + props.data.file.childImageSharp.fixed.src
           }]
@@ -47,6 +45,7 @@ const IndexPage = (props) => {
               <li>発売日から品薄状態が続き、転売価格が8万円〜10万円あたりになっております。</li>
               <li>2021/02/13 時点でも転売行為が横行しており、未だに抽選販売や実店舗のゲリラ販売です。</li>
               <li className="has-text-weight-bold">品薄状況を作り出している転売ヤーには加担せず、欲しい人も我慢して店舗購入を目指しましょう。</li>
+              <li>PlayStation 5 については<a href="https://www.playstation.com/ja-jp/ps5/" target="_blank">PlayStation 公式サイト</a>をご確認ください。</li>
             </ul>
           </div>
         </section>
@@ -69,6 +68,7 @@ export const query = graphql`
     }
     site{
       siteMetadata{
+        siteUrl
         title
       }
     }

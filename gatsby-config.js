@@ -4,15 +4,13 @@ module.exports = {
 	siteMetadata: {
 		title: config.title,
 		author: 'manji6',
-		description: config.description,
-		keywords: config.keywords,
 		twitter: 'https://twitter.com/manji6',
 		github: `https://github.com/manji6`,
 		siteUrl: config.siteUrl,
 		imageUrl: "/images/ps5-src-sony.png"
 	},
 	plugins: [
-		'gatsby-plugin-react-helmet',
+//		'gatsby-plugin-react-helmet',
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -58,12 +56,15 @@ module.exports = {
 		{
       resolve: "gatsby-plugin-next-seo",
       options: {
+//				title: config.title,
 				description: config.description,
 				keywords: config.keywords,						
         openGraph: {
           type: "website",
           locale: "ja_JP",
           url: config.siteUrl,
+					title: config.title,
+					description: config.description,
           site_name: config.title,
         },
         twitter: {

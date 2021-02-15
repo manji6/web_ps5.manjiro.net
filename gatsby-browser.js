@@ -19,7 +19,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
     var days_elapsed_ms = date_now.getTime() - date_release_ps5.getTime()
     var days_elapsed_date = Math.ceil(days_elapsed_ms / (1000 * 60 * 60 * 24))
 
-    document.querySelector("#data_today").textContent = `${date_now.getFullYear()}年${(date_now.getMonth() + 1)}月${date_now.getDate()}日${(date_dayoftheweek_jp[date_now.getDay()])}`
+    document.querySelector("#data_today").textContent = ` ${date_now.getFullYear()}年${(date_now.getMonth() + 1)}月${date_now.getDate()}日(${(date_dayoftheweek_jp[date_now.getDay()])})`
     document.querySelector("#data_duration").textContent = days_elapsed_date
 
     if(date_now.getDate() === 13){
